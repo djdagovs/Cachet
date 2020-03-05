@@ -23,19 +23,20 @@ return [
         'group' => [
             'other' => 'Otros componentes',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Ningún incidente reportado',
-        'past'          => 'Incidencias anteriores',
-        'previous_week' => 'Semana anterior',
-        'next_week'     => 'Semana siguiente',
-        'stickied'      => 'Incidentes pegados',
-        'scheduled'     => 'Mantenimiento programado',
-        'scheduled_at'  => ', programado para :timestamp',
-        'posted'        => 'Publicado :timestamp',
-        'status'        => [
+        'none'         => 'Ningún incidente reportado',
+        'past'         => 'Incidencias anteriores',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', programado para :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
+        'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -54,9 +55,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema operativo | [2,Inf] Todos los sistemas están operativos',
-        'bad'   => '[0,1] El sistema está actualmente experimentando problemas | [2,Inf] Algunos sistemas están experimentando problemas',
-        'major' => '[0,1] El servicio está experimentando una interrupción mayor | [2, Inf] Algunos sistemas están experimentando una interrupción mayor',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'bad'   => '[0,1] El sistema está actualmente experimentando problemas|[2,Inf] Algunos sistemas están experimentando problemas',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -76,12 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Suscríbete para obtener las actualizaciones más recientes',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Suscríbete',
-        'manage'      => [
-            'no_subscriptions' => 'Actualmente estás suscrito a todas las actualizaciones.',
-            'my_subscriptions' => 'Actualmente estás suscrito a las siguientes actualizaciones.',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Suscríbete',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
+            'notifications'       => 'Notificaciones',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Actualmente estás suscrito a todas las actualizaciones.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Actualmente estás suscrito a las siguientes actualizaciones.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Suscríbete para recibir actualizaciones por correo electrónico.',
@@ -118,11 +124,20 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Mantente informado con las últimas actualizaciones de servicio de :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Inicio',
-    'description'     => 'Mantente informado con las últimas actualizaciones de servicio de :app.',
     'powered_by'      => 'La página de estado de :app está proporcionada por <a href="https://cachethq.io">Cachet</a>.',
-    'timezone'        => 'Las horarios son mostrados en :timezone.',
+    'timezone'        => 'Los horarios son mostrados en :timezone.',
     'about_this_site' => 'Acerca de este sitio',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
